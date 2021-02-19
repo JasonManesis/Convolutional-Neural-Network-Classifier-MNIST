@@ -2,6 +2,4 @@
 **Convolutional neural network classifier for MNIST handwritten digits.**
 
 
-
-Input Image
-![](/Project_Image.png)
+![INPUT IMAGE](/Project_Image.png)
