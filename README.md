@@ -1,4 +1,4 @@
 # CNN_MNIST
-Cnn classifier for MNIST handwritten digits.
+Convolutional neural network classifier for MNIST handwritten digits.
 
 ![](/Project_Image.png)
