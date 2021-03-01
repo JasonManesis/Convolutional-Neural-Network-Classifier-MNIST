@@ -3,7 +3,10 @@
 
 <p align="center">
 <img width="500" height="500" src="/Project_Image.png">
+<em>image_caption</em>
 </p>  
+  
+
   
 <img align="left" src="/Filter_Kernels_CL1.png">
 <img align="left" src="/Feature_Maps_CL1.png">
