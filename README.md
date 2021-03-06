@@ -22,3 +22,10 @@
 *First convolutional layer pooled feature maps:*
 <img align="center" src="/Pooled_Feature_Maps_CL1.png">
 
+# Requirements
+
+<pre>
+ Pandas                            Seaborn                              NumPy                          
+ PyTorch                           Matplotlib                           scikit-learn        
+                                                                 
+</pre> 
