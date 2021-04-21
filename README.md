@@ -22,13 +22,6 @@
 *First convolutional layer pooled feature maps:*
 <img align="center" src="/Pooled_Feature_Maps_CL1.png">
 
-# Requirements
-
-<pre>
- Pandas                                Seaborn                                NumPy                          
- PyTorch                               Matplotlib                             scikit-learn        
-                                                                 
-</pre> 
 
 # Model Performance
 
@@ -38,4 +31,12 @@ The model achieved 98.67% accuracy.
 
 # Model Architecture
 
-<kbd><img height="1000" src="/Digraph.png"></kbd>
+<kbd><img height="800" src="/Digraph.png"></kbd>
+
+# Requirements
+
+<pre>
+ Pandas                                Seaborn                                NumPy                          
+ PyTorch                               Matplotlib                             scikit-learn        
+                                                                 
+</pre> 
