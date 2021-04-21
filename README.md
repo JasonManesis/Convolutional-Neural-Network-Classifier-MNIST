@@ -25,7 +25,19 @@
 # Requirements
 
 <pre>
- Pandas                            Seaborn                              NumPy                          
- PyTorch                           Matplotlib                           scikit-learn        
+ Pandas                                Seaborn                                NumPy                          
+ PyTorch                               Matplotlib                             scikit-learn        
                                                                  
 </pre> 
+
+# Model Performance
+
+*First convolutional layer activated feature maps:*
+![confusion_matrix](https://user-images.githubusercontent.com/74200033/115577373-0b820d80-a2cd-11eb-8391-8e9e70818063.png)
+
+# Model Architecture
+
+*First convolutional layer activated feature maps:*
+<img align="center" src="/Activated_Feature_Maps_CL1.png">
+
+
