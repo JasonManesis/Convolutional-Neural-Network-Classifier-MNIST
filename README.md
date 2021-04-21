@@ -32,12 +32,10 @@
 
 # Model Performance
 
-*First convolutional layer activated feature maps:*
-![confusion_matrix](https://user-images.githubusercontent.com/74200033/115577373-0b820d80-a2cd-11eb-8391-8e9e70818063.png)
+The model achieved 98% accuracy.
+
+<kbd><img height="600" src="/confusion_matrix.png"></kbd>
 
 # Model Architecture
 
-*First convolutional layer activated feature maps:*
-<img align="center" src="/Activated_Feature_Maps_CL1.png">
-
-
+<kbd><img height="1000" src="/Digraph.png"></kbd>
