@@ -32,7 +32,7 @@
 
 # Model Performance
 
-The model achieved 98% accuracy.
+The model achieved 98.67% accuracy.
 
 <kbd><img height="600" src="/confusion_matrix.png"></kbd>
 
