@@ -1,4 +1,4 @@
-# Convolutional_Neural_Network_MNIST
+# Convolutional Neural Network - MNIST Dataset
 **Convolutional neural network classifier for MNIST handwritten digits.**
 
 ## Model Architecture
@@ -11,7 +11,7 @@ The model achieved 98.67% accuracy.
 
 <kbd><img height="600" src="/confusion_matrix.png"></kbd>
 
-## Filter kernels and feature map visualization of the first convolutional block
+## Filter kernels and feature map visualization of the first convolutional block:
 
 *Input Image:*
 <p align="center">
