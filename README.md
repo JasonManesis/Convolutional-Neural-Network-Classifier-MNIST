@@ -31,7 +31,7 @@ The model achieved 98.67% accuracy.
 
 # Model Architecture
 
-<kbd><img height="800" src="/Digraph.png"></kbd>
+![](/model_architecture.png)
 
 
 # Requirements
