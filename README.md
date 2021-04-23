@@ -23,7 +23,7 @@ The model achieved 98.67% accuracy.
 ## Filter kernels and feature map visualization of the first convolutional block
 *Input Image:*
 <p align="center">
-<img width="500" height="500" src="/Project_Image.png">
+<img width="400" height="400" src="/Project_Image.png">
 </p>   
 
 
