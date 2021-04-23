@@ -1,0 +1,99 @@
+\documentclass[border=15pt, multi, tikz]{standalone}
+%\usepackage{blocks}
+\usepackage{import}
+\subimport{../../layers/}{init}
+\usetikzlibrary{positioning}
+\usetikzlibrary{3d} %for including external image 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%THE ORIGINAL FILE WAS OBTAINED FROM: https://github.com/HarisIqbal88/PlotNeuralNet
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Color definitions
+\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:red,4;black,0.3}
+\def\FcColor{rgb:blue,5;red,2.5;white,5}
+\def\FcReluColor{rgb:blue,5;red,5;white,4}
+\def\SoftmaxColor{rgb:magenta,5;black,7}
+\definecolor{applegreen}{rgb}{0.55, 0.73, 0.0}
+\definecolor{applegreen_relu}{rgb}{0.55, 0.80, 0.0}
+\definecolor{azure_1}{rgb}{0.0, 0.5, 1.0}
+\definecolor{azure_2}{rgb}{0.0, 0.5, 2.0}
+\definecolor{azure_3}{rgb}{0.2, 0.5, 4.0}
+\definecolor{aureolin}{rgb}{0.99, 0.93, 0.0}
+
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{connection}=[ultra thick,every node/.style={sloped,allow upside down},draw=\edgecolor,opacity=0.7]
+
+%% Draw Layer Blocks
+
+% Input Image
+\node[canvas is zy plane at x=0] (temp) at (-3,0,0) {\includegraphics[width=6cm,height=6cm]{seven.png}};
+
+% conv1
+\pic[shift={(0,0,0)}] at (0,0,0) {RightBandedBox={name=cr1,caption=Convolutional Layer 1,%
+        xlabel={{"6","6"}},ylabel=26,zlabel=26,fill=applegreen,bandfill=applegreen_relu,%
+        height=26,width={3},depth=26}};
+%pool1
+\pic[shift={(0,0,0)}] at (cr1-east) {Box={name=p1,%
+        fill=aureolin,opacity=0.75,height=13,width=3,depth=13}};
+
+% Input Image's Box
+\pic[shift={(-3,0,0)}] at (cr1-west) {Box={name=cr0,%
+        fill=aureolin,opacity=0,height=28,width=0,depth=28}};
+
+% conv2
+\pic[shift={(2,0,0)}] at (p1-east) {RightBandedBox={name=cr2,caption=Convolutional Layer 2,%
+        xlabel={{"12","12","12"}},ylabel=11,zlabel=11,fill=applegreen,bandfill=applegreen_relu,%
+        height=11,width={6},depth=11}};
+%pool2
+\pic[shift={(0,0,0)}] at (cr2-east) {Box={name=p2,%
+        fill=aureolin,opacity=0.75,height=6,width=6,depth=6}};
+
+% fc6
+\pic[shift={(2,0,0)}] at (p2-east) {RightBandedBox={name=fc6,caption=FC Layer 3,%
+        xlabel={{"1",""}},zlabel=200,fill=azure_1,bandfill=azure_2,%
+        height=3,width=3,depth=50}};
+
+% fc7
+\pic[shift={(1.5,0,0)}] at (fc6-east) {RightBandedBox={name=fc7,caption=FC Layer 4,%
+        xlabel={{"1","dummy"}},zlabel=200,fill=azure_1,bandfill=azure_2,%
+        height=3,width=3,depth=50}};
+
+% fc8
+\pic[shift={(1.5,0,0)}] at (fc7-east) {RightBandedBox={name=fc8,caption=FC Layer 5,%
+        xlabel={{"1","dummy"}},zlabel=10,fill=azure_1,bandfill=azure_2,%
+        height=3,width=3,depth=10}};
+
+% softmax
+\pic[shift={(1,0,0)}] at (fc8-east) {Box={name=softmax, caption=Softmax,%
+        xlabel={{"","dummy"}},zlabel=10,opacity=0.9,fill=azure_3,%
+        height=3,width=1.5,depth=10}};
+    
+
+%% Draw Arrow Connections
+
+\draw [connection]  (cr0-east)        -- node {\midarrow} (cr1-west);
+\draw [connection]  (cr1-east)        -- node {\midarrow} (cr2-west);
+\draw [connection]  (cr2-east)        -- node {\midarrow} (fc6-west);
+\draw [connection]  (fc6-east)       -- node {\midarrow} (fc7-west);
+\draw [connection]  (fc7-east)       -- node {\midarrow} (fc8-west);
+\draw [connection]  (fc8-east)       -- node {\midarrow} (softmax-west);
+\draw [connection]  (softmax-east)   -- node {\midarrow} ++(1,0,0);
+
+
+%% Draw Dotted Edges 
+
+\draw[densely dashed]
+    (fc6-west)++(0, 1.5*.2, 1.5*.2) coordinate(a) -- (p2-nearnortheast)
+    (fc6-west)++(0,-1.5*.2, 1.5*.2) coordinate(b) -- (p2-nearsoutheast)
+    (fc6-west)++(0,-1.5*.2,-1.5*.2) coordinate(c) -- (p2-farsoutheast)
+    (fc6-west)++(0, 1.5*.2,-1.5*.2) coordinate(d) -- (p2-farnortheast)
+    
+    (a)--(b)--(c)--(d)
+    ;
+
+\end{tikzpicture}
+\end{document}
