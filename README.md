@@ -9,7 +9,11 @@
 
 The model achieved 98.67% accuracy.
 
-<kbd><img height="600" src="/confusion_matrix.png"></kbd>
+Confusion Matrix:
+<p align="center">
+<img width="500" height="500" src="/confusion_matrix.png">
+</p>   
+
 
 ## Filter kernels and feature map visualization of the first convolutional block:
 
